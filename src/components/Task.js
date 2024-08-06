@@ -7,7 +7,7 @@ export default props => {
     const done_or_not = props.done_at != null ? {textDecorationLine: "line-through"}:{} 
     return (
         <View style={styles.container}>
-            <TouchableWithoutFeedback>
+            <TouchableWithoutFeedback onPress={() => props.toggle_task(props.id)}>
                 <View style={styles.checkContainer}>
                     {get_Check_View(props.done_at)}
                 </View>
